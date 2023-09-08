@@ -64,7 +64,7 @@ constraint fk_tb_endereco_editoras_id_cidade foreign key(id_cidade)
 references tb_cidades(id_cidade)
 );
 
-create table tb_endereco_autores(
+create table tb_enderecos_autores(
 id_endereco int,
 id_autor int,
 id_cidade int,
@@ -100,3 +100,50 @@ constraint fk_tb_livros_id_editora foreign key(id_editora)
 references tb_editoras(id_editora)
 );
 
+insert into tb_editoras 
+values
+(1,'01.222.111/0001-99','EMPRESA TESTE A', 1),
+(2,'33.444.898/0004-00','EMPRESA TESTE B', 1),
+(3,'66.232.111/0001-03','EMPRESA TESTE C', 1);
+
+insert into tb_estados
+values
+(1,'SAO PAULO','SP',1),
+(2,'RIO DE JANEIRO','RJ',1),
+(3,'SANTA CATARINA','SC',1);
+
+insert into tb_autores
+values
+(1,'ADELIO MACHADO','22299923433','223363308',1),
+(2,'CARLOS LACERDA','11122233344','998887776',1),
+(3,'FREI BETTO','34512398712','009998881',1);
+
+insert into tb_categorias
+values
+(1,'INFORMATICA',1),
+(2,'DIREITO',1),
+(3,'AUTO AJUDA',1);
+
+insert into tb_cidades
+values
+(1,1,'RIBEIRAO PRETO',1),
+(2,2,'RESENDE',1),
+(3,3,'FLORIANOPOLIS',1);
+
+insert into tb_enderecos_editoras
+values
+(1,1,1,'COMERCIAL','AV NOVE DE JULHO','123',null,'CENTRO','14015-170',1),
+(2,2,2,'COMERCIAL','AV RUI BARBOSA','987','SALA 10A','JARDIM NUNES','34045-980',1),
+(3,3,3,'COMERCIAL','AV DAS NACOES UNIDAS','12551',null,'BROOKLIN NOVO','36471-320',1);
+
+insert into tb_enderecos_autores
+values 
+(1, 1, 1, 'RESIDENCIAL', 'RUA BONFIM', '123', 'Apto 408', 'SUMAREZINHO', '14100-901', 1),
+(2, 2, 2, 'RESIDENCIAL', 'AV JOÃO FIUZA', '9876', null, 'HIGIENÓPOLIS', '78977-902', 1),
+(3, 3, 3, 'RESIDENCIAL', 'AV SENADOR CÉSAR VERGUEIRO', '100', 'casa', 'JARDINS', '78977-903', 1);
+
+insert into tb_livros
+values 
+(1, 1, 1, 1, '8521201230', 'DESENVOLVIMENTO PARA WEB COM NODE JS', 120.1, 1),
+(2, 2, 2, 2, '9788502070066', 'DIREITO CONSTITUCIONAL ESQUEMATIZADO', 69.3, 1),
+(3, 3, 3, 3, '8535218920', 'O SEU ÚTIMO LIVRO DE AUTO-AJUDA, REPRIMA SUA RAIVA', 39.78, 1);
